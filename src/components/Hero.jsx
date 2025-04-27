@@ -3,7 +3,7 @@ export default function Hero(){
     return(
         <section className="hero">
             <div className="hero__img">
-                <img src="/assets/images/illustration-hero.svg" alt="" aria-hidden='true' />
+                <img src="assets/images/illustration-hero.svg" alt="" aria-hidden='true' />
             </div>
             <div className="hero__desc">
                 <h2 className="hero__descTitle">a simple bookmark manager</h2>

@@ -1,22 +1,23 @@
+import propTypes from "prop-types";
 export default function Download() {
   const browserContent = [
     {
-      src: "/assets/images/logo-chrome.svg",
+      src: "assets/images/logo-chrome.svg",
       title: "Chrome",
       minVersion: "62",
-      hrSrc: "/assets/images/bg-dots.svg",
+      hrSrc: "assets/images/bg-dots.svg",
     },
     {
-      src: "/assets/images/logo-firefox.svg",
+      src: "assets/images/logo-firefox.svg",
       title: "Firefox",
       minVersion: "55",
-      hrSrc: "/assets/images/bg-dots.svg",
+      hrSrc: "assets/images/bg-dots.svg",
     },
     {
-      src: "/assets/images/logo-opera.svg",
+      src: "assets/images/logo-opera.svg",
       title: "Opera",
       minVersion: "46",
-      hrSrc: "/assets/images/bg-dots.svg",
+      hrSrc: "assets/images/bg-dots.svg",
     },
   ];
 
@@ -57,4 +58,11 @@ function Card({ src, title, version, hrSrc }) {
       <button className="card__btn" aria-label={`Add and install extension for ${title}`}>Add & Install Extenstion</button>
     </article>
   );
+}
+
+Card.propTypes = {
+  src: propTypes.string.isRequired,
+  title: propTypes.string.isRequired,
+  version: propTypes.string.isRequired,
+  hrSrc: propTypes.string.isRequired,
 }

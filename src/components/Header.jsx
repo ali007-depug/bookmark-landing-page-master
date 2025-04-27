@@ -13,7 +13,7 @@ export default function Header() {
       ></div>
       {/* header title with logo */}
       <div className="bookmark__headerLogo">
-        <img src="/assets/images/logo-bookmark.svg" alt="bookmark logo" />
+        <img src="assets/images/logo-bookmark.svg" alt="bookmark logo" />
       </div>
       {/* bookmark nav buttons wiht login */}
       <nav className="bookmark__headerNav" aria-label="main nav">
@@ -21,7 +21,7 @@ export default function Header() {
         <button className={!isMenuOpen ? "hamburgerMenu" : "hidden"} onClick={() => setIsMenuOpen(true)} aria-label="open menu" aria-expanded={isMenuOpen} aria-controls="mobileNav">
           <img
             // className={!isMenuOpen ? "hamburgerMenu" : "hidden"}
-            src="/assets/images/icon-hamburger.svg"
+            src="assets/images/icon-hamburger.svg"
             alt="hamburger"
             aria-hidden="true"
           />

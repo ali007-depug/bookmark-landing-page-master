@@ -1,5 +1,5 @@
 import { useState } from "react";
-import PropTypes from "prop-types";
+import propTypes from "prop-types";
 
 export default function Faq() {
   const [FaqActive, setFaqAcitve] = useState(null);
@@ -19,15 +19,15 @@ export default function Faq() {
     },
     {
       id: 2,
-      title: "  Is there a mobile app?",
+      title: "Is there a mobile app?",
       answer:
-        "  Sed consectetur quam id neque fermentum accumsan. Praesent luctus vestibulum dolor, ut condimentum urna vulputate eget. Cras in ligula quis est pharetra mattis sit amet pharetra purus. Sed  sollicitudin ex et ultricies bibendum.",
+        "Sed consectetur quam id neque fermentum accumsan. Praesent luctus vestibulum dolor, ut condimentum urna vulputate eget. Cras in ligula quis est pharetra mattis sit amet pharetra purus. Sed  sollicitudin ex et ultricies bibendum.",
     },
     {
       id: 3,
       title: "What about other Chromium browsers?",
       answer:
-        "  Integer condimentum ipsum id imperdiet finibus. Vivamus in placerat mi, at euismod dui. Aliquam vitae neque eget nisl gravida pellentesque non ut velit.",
+        "Integer condimentum ipsum id imperdiet finibus. Vivamus in placerat mi, at euismod dui. Aliquam vitae neque eget nisl gravida pellentesque non ut velit.",
     },
   ];
 
@@ -50,7 +50,6 @@ export default function Faq() {
           answer={q.answer}
           isActive={FaqActive === q.id}
           id={q.id}
-          //   className={"open"}
         />
       </article>
     );
@@ -82,7 +81,7 @@ function FaqQuestion({ id, title, answer, isActive }) {
         >
           {title}
         </button>
-        <img src="/assets/images/icon-arrow.svg" alt="" aria-hidden="true" />
+        <img src="assets/images/icon-arrow.svg" alt="" aria-hidden="true" />
       </div>
       <p role="region" id={`faq-answer-${id}`} aria-hidden={!isActive}>
         {answer}
@@ -91,9 +90,9 @@ function FaqQuestion({ id, title, answer, isActive }) {
   );
 }
 
-FaqQuestion.PropTypes = {
-  id: PropTypes.number.isRequired,
-  title: PropTypes.string.isRequired,
-  answer: PropTypes.string.isRequired,
-  isActive: PropTypes.bool.isRequired,
+FaqQuestion.propTypes = {
+  id: propTypes.number.isRequired,
+  title: propTypes.string.isRequired,
+  answer: propTypes.string.isRequired,
+  isActive: propTypes.bool.isRequired,
 };

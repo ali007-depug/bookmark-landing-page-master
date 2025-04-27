@@ -1,5 +1,5 @@
 import { useState } from "react";
-import PropTypes from "prop-types";
+import propTypes from "prop-types";
 
 export default function Features() {
   const [btnActive, setBtnsActive] = useState(0);
@@ -32,19 +32,19 @@ export default function Features() {
 
   const FeaturesDetailsContent = [
     {
-      src: "/assets/images/illustration-features-tab-1.svg",
+      src: "assets/images/illustration-features-tab-1.svg",
       title: "book mark in one click",
       prag: "Organize your bookmarks however you like. Our simple drag-and-drop interface gives you complete control over how you manage your favourite sites.",
     },
     {
-      src: "/assets/images/illustration-features-tab-2.svg",
+      src: "assets/images/illustration-features-tab-2.svg",
       title: "intelligent search",
       prag: "Our powerful search feature will help you find saved sites in no time at all.No need to trawl through all of your bookmarks..",
     },
     {
-      src: "/assets/images/illustration-features-tab-3.svg",
+      src: "assets/images/illustration-features-tab-3.svg",
       title: "share your bookmarks",
-      prag: " Easily share your bookmarks and collections with others. Create a shareable link that you can send at the click of a button.",
+      prag: "Easily share your bookmarks and collections with others. Create a shareable link that you can send at the click of a button.",
     },
   ];
 
@@ -88,9 +88,10 @@ function FeaturesDetails({ src, title, prag,btnActive }) {
 }
 
 
-FeaturesDetails.PropTypes = {
-  src : PropTypes.string.isRequired,
-  title : PropTypes.string.isRequired,
-  prag : PropTypes.string.isRequired,
+FeaturesDetails.propTypes = {
+  src : propTypes.string.isRequired,
+  title : propTypes.string.isRequired,
+  prag : propTypes.string.isRequired,
+  btnActive: propTypes.number.isRequired,
 
 }
