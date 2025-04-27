@@ -82,7 +82,7 @@ function FaqQuestion({ id, title, answer, isActive }) {
         >
           {title}
         </button>
-        <img src="./assets/images/icon-arrow.svg" alt="" aria-hidden="true" />
+        <img src="/assets/images/icon-arrow.svg" alt="" aria-hidden="true" />
       </div>
       <p role="region" id={`faq-answer-${id}`} aria-hidden={!isActive}>
         {answer}

@@ -35,7 +35,6 @@ export default function Contact() {
             />
             <p id="email-error" role="alert" aria-live="assertive">whoops,make sure it's an email</p>
           </div>
-          {/* <img src="./assets/images/icon-error.svg" alt="" /> */}
           <button
             type="submit"
             className="contact__btn"

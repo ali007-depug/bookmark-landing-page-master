@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer>
-        <img src="./assets/images/logo-bookmark.svg" alt="Bookmark company logo" />
+        <img src="/assets/images/logo-bookmark.svg" alt="Bookmark company logo" />
       <nav aria-label="footer navigation">
         <ul className="footer__links">
           <li>
@@ -17,8 +17,8 @@ export default function Footer() {
       </nav>
 
       <div className="footer__icons">
-        <img src="./assets/images/icon-facebook.svg" alt="facebook icon" />
-        <img src="./assets/images/icon-twitter.svg" alt="twitter icon" />
+        <img src="/assets/images/icon-facebook.svg" alt="facebook icon" />
+        <img src="/assets/images/icon-twitter.svg" alt="twitter icon" />
       </div>
     </footer>
   );

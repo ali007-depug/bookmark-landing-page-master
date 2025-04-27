@@ -1,22 +1,22 @@
 export default function Download() {
   const browserContent = [
     {
-      src: "./assets/images/logo-chrome.svg",
+      src: "/assets/images/logo-chrome.svg",
       title: "Chrome",
       minVersion: "62",
-      hrSrc: "./assets/images/bg-dots.svg",
+      hrSrc: "/assets/images/bg-dots.svg",
     },
     {
-      src: "./assets/images/logo-firefox.svg",
+      src: "/assets/images/logo-firefox.svg",
       title: "Firefox",
       minVersion: "55",
-      hrSrc: "./assets/images/bg-dots.svg",
+      hrSrc: "/assets/images/bg-dots.svg",
     },
     {
-      src: "./assets/images/logo-opera.svg",
+      src: "/assets/images/logo-opera.svg",
       title: "Opera",
       minVersion: "46",
-      hrSrc: "./assets/images/bg-dots.svg",
+      hrSrc: "/assets/images/bg-dots.svg",
     },
   ];
 
