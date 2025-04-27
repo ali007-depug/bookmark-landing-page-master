@@ -73,7 +73,7 @@
 
       &::after {
         content: "";
-        background: url("assets/images/icon-error.svg");
+        background: url("./assets/images/icon-error.svg");
         background-size: contain;
         width: 20px;
         height: 20px;
@@ -117,12 +117,9 @@
       height: rem(40);
       border-radius: rem(5);
       padding-inline: rem(10);
-      width: 60%;
       border: none;
+      width: 100%;
 
-      @include breakpoint(md){
-        width: 100%;
-      }
       
       &::placeholder {
         color: $n-light-blue;
@@ -141,7 +138,7 @@
       border-radius: rem(5);
       font-weight: $font-w2;
       width: fit-content;
-
+      align-self: flex-start;
       @include breakpoint-down(sm){
         margin-inline:auto ;
       }
