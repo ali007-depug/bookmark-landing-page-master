@@ -780,13 +780,8 @@ button {
   height: 2.5rem;
   border-radius: 0.3125rem;
   padding-inline: 0.625rem;
-  width: 60%;
   border: none;
-}
-@media (min-width: 48em) {
-  .contact form input {
-    width: 100%;
-  }
+  width: 100%;
 }
 .contact form input::placeholder {
   color: hsl(0, 0%, 44%);
@@ -803,6 +798,7 @@ button {
   border-radius: 0.3125rem;
   font-weight: 500;
   width: fit-content;
+  align-self: self-start;
 }
 @media (max-width: 40em) {
   .contact form button {
