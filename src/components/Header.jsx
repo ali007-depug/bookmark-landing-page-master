@@ -35,7 +35,7 @@ export default function Header() {
               className="closeBtn"
             >
               <img
-                src="/assets/images/icon-close.svg"
+                src="assets/images/icon-close.svg"
                 alt="icon close"
                 aria-hidden="true"
               />
