@@ -1,0 +1,160 @@
+@use "../global/" as *;
+@use "../util/" as *;
+
+.bookmark__header {
+  @include flex(null, center, space-between);
+  padding-inline: $mobile-padding;
+  padding-block: $mobile-padding;
+
+  @include breakpoint(sm) {
+    padding-inline: $desktop-padding;
+  }
+}
+
+.bookmark__headerLogo {
+  z-index: 3;
+  background-color: $n-gray;
+  border-radius: rem(5);
+  padding-inline: rem(10);
+}
+
+.bookmark__headerNav {
+  // hamburger+clos icons
+  img {
+    cursor: pointer;
+    position: relative;
+    z-index: 3;
+    padding: rem(10);
+  }
+
+  button {
+    border: none;
+    background-color: transparent;
+  }
+
+  // show only when it's desktop
+  .hamburgerMenu,
+  .closeBtn,
+  .bookmark__headerMoblieNavLinks {
+    @include breakpoint(sm) {
+      display: none;
+    }
+  }
+}
+
+// mobile links
+.bookmark__headerMoblieNavLinks {
+  position: absolute;
+  top: 68px;
+  width: 100%;
+  padding: 20px;
+  left: 0;
+  text-align: center;
+  z-index: 3;
+
+  li {
+    text-transform: uppercase;
+    padding-block: rem(10);
+    cursor: pointer;
+
+    &:not(:last-of-type):before {
+      content: "";
+      width: 100%;
+      height: 1px;
+      margin-block-end: rem(15);
+      display: block;
+      background-color: hsla(0, 1%, 51%, 0.42);
+    }
+
+    &.login {
+      border: 1px solid $n-gray;
+      border-radius: rem(5);
+      margin-block-start: rem(20);
+      position: relative;
+
+      &::before {
+        content: "";
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        top: -15px;
+        margin-block-end: rem(15);
+        display: block;
+        background-color: hsla(0, 1%, 51%, 0.42);
+      }
+    }
+
+    a {
+      color: white;
+    }
+  }
+}
+
+// deskto nav links
+.bookmark__headerDesktopNavLinks {
+  @include flex(null, center, space-between);
+
+  @include breakpoint-down(sm) {
+    display: none;
+  }
+
+  li {
+    text-transform: uppercase;
+    cursor: pointer;
+    letter-spacing: 1px;
+    &:not(:first-of-type) {
+      margin-inline-start: rem(30);
+    }
+
+    &.login {
+      background-color: $p-red;
+      padding-inline: clamp(0.75rem, 1.221vw + 0.464rem, 1.563rem);
+      padding-block: rem(10);
+      border-radius: rem(5);
+      box-shadow: 0px 0px 2px $n-blue;
+      border: 1px solid transparent;
+      transition: all 0.3s ease-in;
+
+      &:hover {
+        background-color: $n-gray;
+        border-color: $p-red;
+
+        a {
+          color: $p-red;
+        }
+      }
+
+      a {
+        color: $n-gray;
+      }
+    }
+
+    a {
+      color: $n-blue;
+      transition: all 0.3s ease-in-out;
+      padding: rem(8);
+      font-size: clamp(0.75rem, 0.376vw + 0.662rem, 1rem);
+      &:hover {
+        color: $p-red;
+      }
+    }
+  }
+}
+
+.overlay {
+  opacity: 1;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  right: 0;
+  top: 0;
+  background-color: hsla(229.1, 30.8%, 21%, 0.94);
+  z-index: 2;
+  @include breakpoint(sm) {
+    display: none;
+  }
+}
+
+.hidden {
+  display: none;
+}

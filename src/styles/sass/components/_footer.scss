@@ -1,0 +1,51 @@
+@use "../global/" as *;
+@use "../util/" as *;
+
+footer {
+  @include flex(rem(50), center, center);
+  flex-direction: column;
+  background-color: $n-blue;
+  padding-block: rem(30);
+
+  @include breakpoint(sm) {
+    min-height: 100px;
+    @include flex(rem(60), center, center);
+    flex-direction: row;
+  }
+
+  img {
+    background-color: rgba(255, 255, 255, 0.514);
+    border-radius: rem(5);
+  }
+
+  .footer__links {
+    @include flex(rem(50), center, center);
+    flex-direction: column;
+
+    @include breakpoint(sm) {
+      @include flex(rem(40));
+      flex-direction: row;
+    }
+
+    a {
+      color: $n-gray;
+      cursor: pointer;
+      text-transform: uppercase;
+      &:hover {
+        color: $p-red;
+      }
+    }
+  }
+
+  .footer__icons {
+    @include flex(rem(25));
+
+    img {
+      background-color: $n-blue;
+      cursor: pointer;
+      &:hover {
+        background-color: $p-red;
+      }
+    }
+  }
+}

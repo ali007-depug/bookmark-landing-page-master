@@ -1,0 +1,136 @@
+@use "../global/" as *;
+@use "../util/" as *;
+
+.hero {
+  padding: $mobile-padding;
+  margin-block-start: rem(20);
+
+  @include breakpoint(sm) {
+    @include flex(rem(10));
+    padding: $desktop-padding;
+  }
+
+  &__img {
+    position: relative;
+
+    @include breakpoint(sm) {
+      order: 1;
+      min-width: 44%;
+    }
+
+    @include breakpoint(lg) {
+      min-width: 60%;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    // create blue background
+    &::after {
+      content: "";
+      display: block;
+      width: 65%;
+      height: 77%;
+      background-color: $p-blue;
+      position: absolute;
+      top: 20%;
+      left: 40%;
+      border-bottom-left-radius: 5rem;
+      z-index: -1;
+
+      @include breakpoint(sm) {
+        width: 80%;
+        left: 32%;
+      }
+
+      @include breakpoint(lg) {
+        width: 80%;
+        left: 29%;
+      }
+    }
+  }
+
+  // hero description wrapper
+  .hero__desc {
+    @include flex(rem(40));
+    flex-direction: column;
+
+    @include breakpoint-down(sm) {
+      text-align: center;
+      margin-block-start: rem(50);
+    }
+
+    @include breakpoint(sm) {
+      gap: rem(20);
+    }
+
+    @include breakpoint(lg) {
+      justify-content: center;
+    }
+  }
+
+  .hero__descTitle {
+    color: $n-blue;
+    text-transform: capitalize;
+    font-weight: 700;
+    font-size: rem(24);
+
+    @include breakpoint(md) {
+      font-size: rem(36);
+    }
+  }
+
+  .hero__descPrag {
+    color: hsl(226.2, 10.9%, 23.3%);
+    font-weight: $font-w;
+    line-height: 1.8;
+    font-size: rem(14);
+
+    @include breakpoint(md) {
+      font-size: rem(15);
+    }
+  }
+
+  .hero__descBtns {
+    @include flex(rem(10));
+
+    @include breakpoint-down(sm) {
+      margin-inline: auto;
+    }
+
+    button {
+      padding-inline: rem(25);
+      padding-block: rem(10);
+      border-radius: rem(5);
+      box-shadow: 0px 0px 1px $n-blue;
+      border: 1px solid transparent;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: rem(14);
+
+      // style the blue button
+      @include breakpoint(sm) {
+        padding-inline: clamp(10px, 2vw, 30px);
+      }
+
+      &:first-of-type {
+        color: $n-gray;
+
+        &:hover {
+          border-color: $p-blue;
+          background-color: $n-gray;
+          color: $p-blue;
+        }
+      }
+      &:last-of-type {
+        background-color: $n-gray !important;
+        color: $n-blue;
+
+        &:hover {
+          border-color: $n-blue;
+          background-color: $n-gray;
+          color: $n-blue;
+        }
+      }
+    }
+  }
+}

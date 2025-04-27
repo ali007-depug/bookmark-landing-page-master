@@ -1,0 +1,20 @@
+// colors 
+@use "../util/" as *;
+$p-blue : hsl(231, 69%, 60%);
+$p-red : hsl(0,94%,66%);
+
+$n-gray : hsl(0,0%,97%);
+$n-blue : hsl(229,31%,21%);
+$n-light-blue: hsl(0, 0%, 44%);
+// typography
+$font-family : 'Rubik',san-serif;
+
+$font-w : 400;
+$font-w2 : 500;
+
+$font-size : 18px;
+
+$mobile-padding : rem(25);
+
+$desktop-padding: clamp(1rem,5vw,5rem)
+

@@ -1,0 +1,139 @@
+@use "../global/" as *;
+@use "../util/" as *;
+
+.features {
+  padding-inline: $mobile-padding;
+  text-align: center;
+
+  @include breakpoint(sm){
+    padding-inline: $desktop-padding;
+  }
+
+  &__btns {
+    margin-block-start: rem(10);
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint(md){
+        flex-direction: row;
+        margin-inline: auto;
+        width: fit-content;
+        gap: rem(20);
+        border-bottom: 1px solid hsla(0, 0%, 56%, 0.767);
+    }
+
+    button {
+      color: $n-blue;
+      padding-block: rem(20);
+      background-color: transparent;
+      border:none;
+      text-transform: capitalize;
+      font-size: rem(16);
+      font-weight: $font-w2;
+      cursor: pointer;
+
+      @include breakpoint-down(sm){
+      &:not(:nth-of-type(2)) {
+        border: 1px solid hsla(0, 0%, 56%, 0.767);
+        border-right-color: transparent;
+        border-left-color: transparent;
+      }
+    }
+
+    @include breakpoint(md){
+        padding-inline: rem(60);
+        font-size: rem(18);
+        &:hover{
+            color: $p-red;
+        }
+      }
+
+      &.active {
+        position: relative;
+
+        &::after {
+          content: "";
+          display: block;
+          width: 25%;
+          height: 4px;
+          background-color: $p-red;
+          position: absolute;
+          bottom: 0;
+          left: 37%;
+
+          @include breakpoint(md){
+            width: 100%;
+            left: 0;
+          }
+        }
+      }
+    }
+  }
+
+  // feature deatils
+
+  &__details {
+    margin-block-start: rem(80);
+
+    @include breakpoint(md) {
+      @include flex(rem(40));
+    }
+  }
+
+  &__img {
+    position: relative;
+    margin-block-end: rem(80);
+    @include breakpoint(md){
+      min-width: 50%;
+      margin-block-end: 0;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 75%;
+      height: 85%;
+      background-color: $p-blue;
+      position: absolute;
+      top: 20%;
+      right: 43%;
+      border-bottom-right-radius: 5rem;
+      z-index: -1;
+
+      @include breakpoint(sm) {
+        width: 80%;
+        right: 62%;
+      }
+
+      @include breakpoint(lg) {
+        width: 80%;
+        right: 46%;
+      }
+    }
+  }
+
+  &__content {
+
+    @include breakpoint(md) {
+      @include flex(null, null, center);
+      flex-direction: column;
+      text-align: initial;
+    }
+  }
+
+  &__button {
+    border:none;
+    font-size: rem(16);
+    cursor: pointer;
+    padding-inline: rem(15);
+    padding-block: rem(10);
+    color: $n-gray;
+    width: fit-content;
+    border-radius: rem(5);
+
+    @include breakpoint-down(sm) {
+      display: none;
+    }
+    
+  }
+}

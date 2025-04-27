@@ -1,0 +1,95 @@
+@use "../global/" as *;
+@use "../util/" as *;
+
+.faq {
+  padding-inline: $mobile-padding;
+  margin-block-start: rem(40);
+  text-align: center;
+
+  @include breakpoint(md) {
+    width: min(600px, 90%);
+    margin-inline: auto;
+    .section__title,
+    .section__prag {
+      text-align: center;
+    }
+  }
+
+  &__content {
+    margin-block-start: rem(50);
+
+    .question {
+      @include flex(rem(20));
+      flex-direction: column;
+      border-top: 1px solid $n-light-blue;
+      padding-block: rem(20);
+      cursor: pointer;
+
+      &:hover {
+        button {
+          cursor: pointer;
+          color: $p-red;
+        }
+      }
+
+      &:last-of-type {
+        border-bottom: 1px solid $n-light-blue;
+      }
+
+      // rotate the arrow and show the answer
+      &.open {
+        img {
+          transform: rotate(180deg);
+        }
+
+        p {
+          max-height: 200px;
+        }
+      }
+
+      &__details {
+        @include flex(null, null, space-between);
+
+        // the question
+        button {
+          color: $n-blue;
+          background-color: transparent !important;
+          border: none;
+          font-size: rem(18);
+          font-weight: bold;
+          &:hover {
+            color: $p-red;
+          }
+        }
+        // the arrow
+        img {
+          width: 15px;
+          height: 10px;
+          transition: all 0.3s ease-in-out;
+        }
+      }
+      // the answer
+      p {
+        color: $n-light-blue;
+        line-height: 1.8;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+      }
+    }
+  }
+  
+  &__btn {
+    display: block;
+    margin-block-start: rem(40);
+    padding-inline: rem(15);
+    padding-block: rem(10);
+    border: none;
+    border-radius: rem(5);
+    cursor: pointer;
+    color: $n-gray;
+    font-weight: $font-w2;
+    font-size: rem(16);
+    margin-inline: auto;
+  }
+}

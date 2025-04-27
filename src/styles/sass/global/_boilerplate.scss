@@ -1,0 +1,58 @@
+@use "../util" as *;
+@use "./vars" as *;
+
+// font
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+*,*::after,*::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: $font-family;
+    background-color: $n-gray;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+ul{
+    list-style-type:none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a,a:visited{
+    text-decoration: none;
+}
+
+.section__title {
+    text-transform: capitalize;
+    color: $n-blue;
+    // text-align: center;
+  }
+
+  .section__prag {
+    line-height: 1.8;
+    font-size: rem(15);
+    margin-block: rem(15);
+    color: $n-light-blue;
+    width: 30ch;
+    margin-inline: auto;
+    @include breakpoint(lg){
+        width: 50ch;
+        text-wrap: balance;
+    }
+  }
+
+  button{
+    background-color: $p-blue;
+    transition: all 0.3s ease-in-out;
+  }

@@ -1,0 +1,156 @@
+@use "../global/" as *;
+@use "../util/" as *;
+
+.contact {
+  padding-inline: $mobile-padding;
+  padding-block: rem(40);
+  background-color: $p-blue;
+  margin-block-start: rem(80);
+  color: $n-gray;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  
+  &__text {
+
+    @include breakpoint(md) {
+      @include flex(null, center, center);
+      flex-direction: column;
+    }
+
+    span {
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-weight: $font-w;
+    }
+
+    h4 {
+      text-transform: capitalize;
+      margin-block: rem(30);
+      font-size: rem(20);
+      font-weight: $font-w2;
+      line-height: 1.8;
+
+      @include breakpoint(md) {
+        width: 400px;
+        font-size: rem(30);
+      }
+    }
+  }
+
+  form {
+
+    @include flex(rem(20), null, center);
+    flex-direction: column;
+
+    @include breakpoint(sm) {
+      flex-direction: row;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .email {
+      position: relative;
+      
+      @include breakpoint(lg) {
+        @include flex(null, center, center);
+      flex-direction: column;
+      }
+
+      @include breakpoint(md){
+      flex-basis: 300px;
+      }
+
+      &::after {
+        content: "";
+        background: url("./assets/images/icon-error.svg");
+        background-size: contain;
+        width: 20px;
+        height: 20px;
+        pointer-events: none;
+        position: absolute;
+        right: 15px;
+        top: 12px;
+        display: none;
+      }
+      // show the error message with the warining icon
+
+      &.error {
+        input {
+          outline: 1px solid $p-red;
+        }
+        &::after {
+          display: block;
+        }
+        p {
+          display: block;
+        }
+      }
+
+      p {
+        background-color: $p-red;
+        color: $n-gray;
+        padding-inline: rem(10);
+        text-align: initial;
+        font-size: rem(14);
+        display: none;
+        width: 100%;
+      }
+
+      img {
+        display: none;
+      }
+      
+    }
+
+    input {
+      height: rem(40);
+      border-radius: rem(5);
+      padding-inline: rem(10);
+      width: 60%;
+      border: none;
+
+      @include breakpoint(md){
+        width: 100%;
+      }
+      
+      &::placeholder {
+        color: $n-light-blue;
+        opacity: 1;
+      }
+    }
+
+    button {
+      background-color: $p-red;
+      color: $n-gray;
+      border-color: transparent;
+      padding-inline: rem(30);
+      padding-block: rem(10);
+      font-size: rem(15);
+      cursor: pointer;
+      border-radius: rem(5);
+      font-weight: $font-w2;
+      width: fit-content;
+
+      @include breakpoint-down(sm){
+        margin-inline:auto ;
+      }
+      
+      &:hover {
+        color: $p-red;
+        border-color: $p-red;
+        background-color: $n-gray;
+      }
+    }
+  }
+}

@@ -1,0 +1,70 @@
+@use "../global/" as *;
+@use "../util/" as *;
+
+.download {
+  padding: $mobile-padding;
+  margin-block-start: rem(80);
+  text-align: center;
+
+  .download__content {
+    @include flex(rem(30), center);
+    flex-direction: column;
+
+    @include breakpoint(md) {
+      flex-direction: row;
+      justify-content: center;
+      margin-block-start: rem(20);
+    }
+  }
+
+  .card {
+    @include flex(rem(15), center);
+    flex-direction: column;
+    padding-block-start: rem(40);
+    background-color: $n-gray;
+    box-shadow: 0 0 10px hsl(0, 0%, 86%);
+    border-radius: rem(5);
+
+    @include breakpoint(lg) {
+      &:nth-of-type(2) {
+        margin-block-start: rem(40);
+      }
+
+      &:nth-of-type(3) {
+        margin-block-start: rem(80);
+      }
+    }
+
+    &__text {
+
+      h3 {
+        margin-block-end: rem(10);
+        color: $n-blue;
+      }
+
+      span {
+        color: $n-light-blue;
+        margin-block-end: rem(20);
+        display: block;
+      }
+    }
+
+    &__btn {
+      color: $n-gray;
+      padding-inline: clamp(20px, 2vw, 30px);
+      padding-block: rem(10);
+      font-size: rem(16);
+      border: none;
+      border-radius: rem(5);
+      margin-block: rem(15);
+      font-weight: 600;
+      border: 2px solid $p-blue;
+      cursor: pointer;
+      &:hover {
+        background-color: $n-gray;
+        color: $p-blue;
+      }
+
+    }
+  }
+}
